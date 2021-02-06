@@ -108,17 +108,14 @@ $$
     const int maxW = 1e7 + 5;
     int n, W, w[maxn], v[maxn];
     long long f[maxW];
-    int main()
-    {
-        std::cin >> W >> n;
-        for (int i = 1; i <= n; i++)
-            std::cin >> w[i] >> v[i];
-        for (int i = 1; i <= n; i++)
-            for (int l = w[i]; l <= W; l++)
-                if (f[l - w[i]] + v[i] > f[l])
-                    f[l] = f[l - w[i]] + v[i];
-        std::cout << f[W];
-        return 0;
+    int main() {
+      std::cin >> W >> n;
+      for (int i = 1; i <= n; i++) std::cin >> w[i] >> v[i];
+      for (int i = 1; i <= n; i++)
+        for (int l = w[i]; l <= W; l++)
+          if (f[l - w[i]] + v[i] > f[l]) f[l] = f[l - w[i]] + v[i];
+      std::cout << f[W];
+      return 0;
     }
     ```
 

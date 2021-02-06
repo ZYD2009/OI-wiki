@@ -165,7 +165,7 @@ void traverse(TreeNode* root) {
 
 ## 例题详解
 
-???+note "[437. 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/)" 
+???+note "[437. 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/)"
     给定一个二叉树，它的每个结点都存放着一个整数值。
     
     找出路径和等于给定数值的路径总数。
@@ -242,17 +242,15 @@ void traverse(TreeNode* root) {
               pathSum(root->right, sum);  // 右边路径总数（相信它能算出来）
           return leftPathSum + rightPathSum + pathImLeading;
         }
-        ```
-    
         int count(TreeNode *node, int sum) {
-            if (node == nullptr) return 0;
-            // 能不能作为一条单独的路径呢？
-            int isMe = (node->val == sum) ? 1 : 0;
-            // 左边的，你那边能凑几个 sum - node.val ？
-            int leftNode = count(node->left, sum - node->val);
-            // 右边的，你那边能凑几个 sum - node.val ？
-            int rightNode = count(node->right, sum - node->val);
-            return isMe + leftNode + rightNode;  // 我这能凑这么多个
+          if (node == nullptr) return 0;
+          //能不能作为一条单独的路径呢？
+          int isMe = (node->val == sum) ? 1 : 0;
+          //左边的，你那边能凑几个 sum - node.val？
+          int leftNode = count(node->left, sum - node->val);
+          //右边的，你那边能凑几个 sum - node.val？
+          int rightNode = count(node->right, sum - node->val);
+          return isMe + leftNode + rightNode;  //我这能凑这么多个
         }
         ```
     

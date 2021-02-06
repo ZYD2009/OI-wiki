@@ -5,7 +5,7 @@
 ## 例题
 
 ???+note "[SPOJ PT07Z, Longest path in a tree](https://www.spoj.com/problems/PT07Z/)"
-    给定一棵 $n$ 个节点的树，求其直径的长度。$1\leq n\leq 10^4$。
+    给定一棵 $n$ 个节点的树，求其直径的长度。 $1\leq n\leq 10^4$ 。
 
 ## 做法 1. 两次 DFS
 
@@ -35,7 +35,7 @@ int n, c, d[N];
 vector<int> E[N];
 
 void dfs(int u, int fa) {
-  for (int v: E[u]) {
+  for (int v : E[u]) {
     if (v == fa) continue;
     d[v] = d[u] + 1;
     if (d[v] > d[c]) c = v;
@@ -46,11 +46,12 @@ void dfs(int u, int fa) {
 int main() {
   scanf("%d", &n);
   for (int i = 1; i < n; i++) {
-    int u,v;
+    int u, v;
     scanf("%d %d", &u, &v);
     E[u].push_back(v), E[v].push_back(u);
   }
-  dfs(1,0); d[c] = 0, dfs(c,0);
+  dfs(1, 0);
+  d[c] = 0, dfs(c, 0);
   printf("%d\n", d[c]);
   return 0;
 }
@@ -69,12 +70,14 @@ vector<int> E[N];
 
 void dfs(int u, int fa) {
   d1[u] = d2[u] = 0;
-  for (int v: E[u]) {
+  for (int v : E[u]) {
     if (v == fa) continue;
     dfs(v, u);
     int t = d1[v] + 1;
-    if (t > d1[u]) d2[u] = d1[u], d1[u] = t;
-    else if (t > d2[u]) d2[u] = t;
+    if (t > d1[u])
+      d2[u] = d1[u], d1[u] = t;
+    else if (t > d2[u])
+      d2[u] = t;
   }
   d = max(d, d1[u] + d2[u]);
 }
@@ -82,7 +85,7 @@ void dfs(int u, int fa) {
 int main() {
   scanf("%d", &n);
   for (int i = 1; i < n; i++) {
-    int u,v;
+    int u, v;
     scanf("%d %d", &u, &v);
     E[u].push_back(v), E[v].push_back(u);
   }

@@ -11,7 +11,7 @@ author: TrisolarisHD, hsfzLZH1, abc1763613206, greyqz, Ir1d, billchenchina, Chro
 
 状态转移方程： $f_i=\min_{j<i}\{f_j+(pre_i-pre_j+i-j-1-L)^2\}$ 。
 
-其中 $pre_i$ 表示前 $i$ 个数的和，即 $\sum_{j=1}^i c_j$。
+其中 $pre_i$ 表示前 $i$ 个数的和，即 $\sum_{j=1}^i c_j$ 。
 
 简化状态转移方程式：令 $s_i=pre_i+i,L'=L+1$ ，则 $f_i=\min_{j<i}\{f_j+(s_i-s_j-L')^2\}$ 。
 
@@ -56,7 +56,7 @@ $$
 
 接下来我们介绍斜率优化的进阶应用，将斜率优化与二分/分治/数据结构等结合，来维护性质不那么好（缺少一些单调性性质）的 DP 方程。
 
-## 二分 / CDQ / 平衡树优化DP
+## 二分/CDQ/平衡树优化 DP
 
 当我们在 $i$ 这个点寻找最优决策时，会使用一个和 $i$ 相关的直线 $f(i)$ 去切我们维护的凸包。切到的点即为最优决策。
 
@@ -65,13 +65,13 @@ $$
 ???+note "玩具装箱 改"
     有 $n$ 个玩具，第 $i$ 个玩具价值为 $c_i$ 。要求将这 $n$ 个玩具排成一排，分成若干段。对于一段 $[l,r]$ ，它的代价为 $(r-l+\sum_{i=L}^R c_i-L)^2$ 。求分段的最小代价。
     
-    $1\le n\le 5\times 10^4,1\le L,-10^7\le c_i\le 10^7$ 。
+     $1\le n\le 5\times 10^4,1\le L,-10^7\le c_i\le 10^7$ 。
 
 本题与「玩具装箱」问题唯一的区别是，玩具的价值可以为负。延续之前的思路，令 $f_i$ 表示前 $i$ 个物品，分若干段的最小代价。
 
 状态转移方程： $f_i=\min_{j<i}\{f_j+(pre_i-pre_j+i-j-1-L)^2\}$ 。
 
-其中 $pre_i = \sum_{j=1}^i c_j$。
+其中 $pre_i = \sum_{j=1}^i c_j$ 。
 
 将方程做相同的变换
 
@@ -91,9 +91,9 @@ $$
 在加入决策点，也就是凸壳上加一个点的时候，我们有两种方法维护：
 
 1. 直接用平衡树维护凸壳。那么寻找决策点的二分操作就转化为在平衡树上二分，插入决策点就转化为在平衡树上插入一个结点，并删除若干个被踢出凸壳的点。此方法思路简洁但实现繁琐。
-2. 考虑 CDQ 分治。
+2.  考虑 CDQ 分治。
 
-$\text{CDQ}(l,r)$ 代表计算 $f_i,i\in [l,r]$ 。考虑 $\text{CDQ}(1,n)$：
+     $\text{CDQ}(l,r)$ 代表计算 $f_i,i\in [l,r]$ 。考虑 $\text{CDQ}(1,n)$ ：
 
 - 我们先调用 $\text{CDQ}(1,mid)$ 算出 $f_i,i\in[1,mid]$ 。然后我们对 $[1,mid]$ 这个区间内的决策点建凸壳，然后使用这个凸壳去更新 $f_i,i\in [mid+1,n]$ 。这时我们决策点集是固定的，不像之前那样边计算 DP 值边加入决策点，那么我们就可以把 $i \in [mid+1,n]$ 的 $f_i$ 先按照直线的斜率 $k_i$ 排序，然后就可以使用单调队列来计算 DP 值了。当然，也可以在静态凸壳上二分计算 DP 值。
 
@@ -103,7 +103,7 @@ $\text{CDQ}(l,r)$ 代表计算 $f_i,i\in [l,r]$ 。考虑 $\text{CDQ}(1,n)$：
 
 对比「玩具装箱」和「玩家装箱 改」，可以总结出以下两点：
 
-- 二分 / CDQ / 平衡树等能够优化DP方程的计算，于一定程度上降低复杂度，但不能改变这个方程本身。
+- 二分/CDQ/平衡树等能够优化 DP 方程的计算，于一定程度上降低复杂度，但不能改变这个方程本身。
 - DP 方程的性质会取决于数据的特征，但 DP 方程本身取决于题目中的数学模型。
 
 ## 小结
@@ -112,13 +112,12 @@ $\text{CDQ}(l,r)$ 代表计算 $f_i,i\in [l,r]$ 。考虑 $\text{CDQ}(1,n)$：
 
 ## 习题
 
-- [「SDOI2016」征途](https://loj.ac/problem/2035) 
-- [「ZJOI2007」仓库建设](https://loj.ac/problem/10189) 
-- [「APIO2010」特别行动队](https://loj.ac/problem/10190) 
-- [「JSOI2011」柠檬](https://www.luogu.com.cn/problem/P5504) 
-- [「Codeforces 311B」Cats Transport](http://codeforces.com/problemset/problem/311/B) 
-- [「NOI2007」货币兑换](https://loj.ac/problem/2353) 
-- [「NOI2019」回家路线](https://loj.ac/problem/3156) 
-- [「NOI2016」国王饮水记](https://uoj.ac/problem/223) 
-- [「NOI2014」购票](https://uoj.ac/problem/7) 
-
+-  [「SDOI2016」征途](https://loj.ac/problem/2035) 
+-  [「ZJOI2007」仓库建设](https://loj.ac/problem/10189) 
+-  [「APIO2010」特别行动队](https://loj.ac/problem/10190) 
+-  [「JSOI2011」柠檬](https://www.luogu.com.cn/problem/P5504) 
+-  [「Codeforces 311B」Cats Transport](http://codeforces.com/problemset/problem/311/B) 
+-  [「NOI2007」货币兑换](https://loj.ac/problem/2353) 
+-  [「NOI2019」回家路线](https://loj.ac/problem/3156) 
+-  [「NOI2016」国王饮水记](https://uoj.ac/problem/223) 
+-  [「NOI2014」购票](https://uoj.ac/problem/7) 

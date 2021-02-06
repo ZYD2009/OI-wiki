@@ -123,12 +123,12 @@ author: Suyun514, ChungZH, Enter-tainer, StudyingFather, Konano, JulieSigtuna, G
     - 提纲挚领，但内容较少。
 -  [Legend-K 的数据结构与算法的笔记](http://www.legend-k.com/Algorithm/Algorithm.pdf) 
 -  [acm-cheat-sheet](https://github.com/soulmachine/acm-cheat-sheet) 
--    [Competitive Programmer’s Handbook](https://cses.fi/book/book.pdf) - Antti Laaksonen
-    - 作者花了三年个人时间完成。面向算法竞赛，覆盖面广，详略得当。
--    [《挑战编程：程序设计竞赛训练手册》](http://acm.cs.buap.mx/downloads/Programming_Challenges.pdf) - Steven S. Skiena/Miguel A. Revilla
-    - 由西班牙 University of Valladolid 的两位教授编写。
-    - 阅读 [经过翻译的在线电子版图书](http://www.tup.com.cn/upload/books/yz/030502-01.pdf) 
-    - 购买 [纸质版图书](http://www.tup.tsinghua.edu.cn/booksCenter/book_03050201.html) 
+-  [Competitive Programmer’s Handbook](https://cses.fi/book/book.pdf) - Antti Laaksonen
+- 作者花了三年个人时间完成。面向算法竞赛，覆盖面广，详略得当。
+-  [《挑战编程：程序设计竞赛训练手册》](http://acm.cs.buap.mx/downloads/Programming_Challenges.pdf) - Steven S. Skiena/Miguel A. Revilla
+- 由西班牙 University of Valladolid 的两位教授编写。
+- 阅读 [经过翻译的在线电子版图书](http://www.tup.com.cn/upload/books/yz/030502-01.pdf) 
+- 购买 [纸质版图书](http://www.tup.tsinghua.edu.cn/booksCenter/book_03050201.html) 
 
 ## 工具
 

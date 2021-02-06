@@ -20,9 +20,8 @@ Code Runner 是一个可以一键运行代码的插件，在工程上一般用�
 
 ???+ warning
     如果安装了 VS Code 与 Code Runner 后，代码仍然无法运行，很有可能是因为系统尚未安装 C/C++ 的运行环境，参考 [Hello, World! 页面](../../lang/helloworld.md) 以安装。
-
-    记得勾选设置中的 Run In Terminal 选项，如图：
-    ![](./images/vscode-7.png)
+    
+    记得勾选设置中的 Run In Terminal 选项，如图：![](./images/vscode-7.png)
 
 ## 使用 C/C++ 插件编译并调试
 
@@ -57,7 +56,6 @@ Code Runner 是一个可以一键运行代码的插件，在工程上一般用�
 如果出现了“选择环境”的提示，选择“C++ (GDB/LLDB)”。在“选择配置”中，G++ 用户选择 `g++.exe - 生成和调试活动文件` ；Clang 用户选择 `clang++ - 生成和调试活动文件` 。
 
 ???+ warning
-
     配置名称并非固定，而是可以自定义的。不同的操作系统可能具有不同的配置名称。
 
 完成后，VS Code 将自动完成初始化操作并弹出一个 `launch.json` 配置文件。关闭它。

@@ -437,16 +437,14 @@ char nc() {
              ? EOF
              : *p++;
 }
-inline ll rd() { // LLONG_MIN LMAX=9,223,372,036,854,775,807
+inline ll rd() {  // LLONG_MIN LMAX=9,223,372,036,854,775,807
   ll s = 0, w = 1;
   char ch = nc();
   while (ch < '0' || ch > '9') {
-    if (ch == '-')
-      w = -1;
+    if (ch == '-') w = -1;
     ch = nc();
   }
-  while (ch >= '0' && ch <= '9')
-    s = s * 10 + ch - '0', ch = nc();
+  while (ch >= '0' && ch <= '9') s = s * 10 + ch - '0', ch = nc();
   return s * w;
 }
 const int N = 1e5 + 7;
@@ -495,49 +493,39 @@ void build(int u = 1, int l = 1, int r = n) {
 }
 int L, R;
 void add(int v, int u = 1, int l = 1, int r = n) {
-  if (R < l || r < L)
-    return;
-  if (L <= l && r <= R)
-    return pushadd(u, v, max(v, 0));
+  if (R < l || r < L) return;
+  if (L <= l && r <= R) return pushadd(u, v, max(v, 0));
   pushdown(u, l, r);
   add(v, ls, l, mid), add(v, rs, mid + 1, r);
   pushup(u);
 }
 void tset(int v, int u = 1, int l = 1, int r = n) {
-  if (R < l || r < L)
-    return;
-  if (L <= l && r <= R)
-    return pushset(u, v, v);
+  if (R < l || r < L) return;
+  if (L <= l && r <= R) return pushset(u, v, v);
   pushdown(u, l, r);
   tset(v, ls, l, mid), tset(v, rs, mid + 1, r);
   pushup(u);
 }
 int qmax(int u = 1, int l = 1, int r = n) {
-  if (R < l || r < L)
-    return INT_MIN;
-  if (L <= l && r <= R)
-    return g[u].mx;
+  if (R < l || r < L) return INT_MIN;
+  if (L <= l && r <= R) return g[u].mx;
   pushdown(u, l, r);
   return max(qmax(ls, l, mid), qmax(rs, mid + 1, r));
 }
 int qmaxh(int u = 1, int l = 1, int r = n) {
-  if (R < l || r < L)
-    return INT_MIN;
-  if (L <= l && r <= R)
-    return g[u]._mx;
+  if (R < l || r < L) return INT_MIN;
+  if (L <= l && r <= R) return g[u]._mx;
   pushdown(u, l, r);
   return max(qmaxh(ls, l, mid), qmaxh(rs, mid + 1, r));
 }
 int main() {
   n = rd();
-  for (int i = 1; i <= n; ++i)
-    a[i] = rd();
+  for (int i = 1; i <= n; ++i) a[i] = rd();
   build();
   int m = rd(), z;
   for (int i = 1; i <= m; ++i) {
     char op = nc();
-    while (op == ' ' || op == '\r' || op == '\n')
-      op = nc();
+    while (op == ' ' || op == '\r' || op == '\n') op = nc();
     L = rd(), R = rd();
     if (op == 'Q')
       printf("%d\n", qmax());

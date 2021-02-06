@@ -129,18 +129,17 @@ $$
 #### 对顶堆
 
 ??? note "[SP16254 RMID2 - Running Median Again](https://www.luogu.com.cn/problem/SP16254)"
-
     维护一个序列，支持两种操作：
-
+    
     1. 向序列中插入一个元素
-
+    
     2. 输出并删除当前序列的中位数（若序列长度为偶数，则输出较小的中位数）
 
 这个问题可以被进一步抽象成：动态维护一个序列上第 $k$ 大的数， $k$ 值可能会发生变化。
 
 对于此类问题，我们可以使用 **对顶堆** 这一技巧予以解决（可以避免写权值线段树或 BST 带来的繁琐）。
 
-对顶堆由一个大根堆与一个小根堆组成，小根堆维护大值即前 $k$ 大的值（包含第k个），大根堆维护小值即比第 $k$ 大数小的其他数。
+对顶堆由一个大根堆与一个小根堆组成，小根堆维护大值即前 $k$ 大的值（包含第 k 个），大根堆维护小值即比第 $k$ 大数小的其他数。
 
 这两个堆构成的数据结构支持以下操作：
 
@@ -153,54 +152,45 @@ $$
 显然，查询第 $k$ 大元素的时间复杂度是 $O(1)$ 的。由于插入、删除或调整 $k$ 值后，小根堆的大小与期望的 $k$ 值最多相差 $1$ ，故每次维护最多只需对大根堆与小根堆中的元素进行一次调整，因此，这些操作的时间复杂度都是 $O(\log n)$ 的。
 
 ??? "参考代码"
-
     ```cpp
-    #include <iostream>
     #include <cstdio>
+    #include <iostream>
     #include <queue>
     using namespace std;
     int t, x;
-    int main()
-    {
-        scanf("%d", &t);
-        while (t--)
-        {
-            // 大根堆，维护前一半元素（存小值）
-            priority_queue<int, vector<int>, less<int> > a;
-            // 小根堆，维护后一半元素（存大值）
-            priority_queue<int, vector<int>, greater<int> > b;
-            while (scanf("%d", &x) && x)
-            {
-                // 若为查询并删除操作，输出并删除大根堆堆顶元素
-                // 因为这题要求输出中位数中较小者（偶数个数字会存在两个中位数候选）
-                // 这个和上面的第k大讲解有稍许出入，但如果理解了上面的，这个稍微变通下便可理清
-                if (x == -1)
-                {
-                    printf("%d\n", a.top());
-                    a.pop();
-                }
-                // 若为插入操作，根据大根堆堆顶的元素值，选择合适的堆进行插入
-                else
-                {
-                    if (a.empty() || x <= a.top())
-                        a.push(x);
-                    else
-                        b.push(x);
-                }
-                // 对堆顶堆进行调整
-                if (a.size() > (a.size() + b.size() + 1) / 2)
-                {
-                    b.push(a.top());
-                    a.pop();
-                }
-                else if (a.size() < (a.size() + b.size() + 1) / 2)
-                {
-                    a.push(b.top());
-                    b.pop();
-                }
-            } 
+    int main() {
+      scanf("%d", &t);
+      while (t--) {
+        // 大根堆，维护前一半元素（存小值）
+        priority_queue<int, vector<int>, less<int> > a;
+        // 小根堆，维护后一半元素（存大值）
+        priority_queue<int, vector<int>, greater<int> > b;
+        while (scanf("%d", &x) && x) {
+          // 若为查询并删除操作，输出并删除大根堆堆顶元素
+          // 因为这题要求输出中位数中较小者（偶数个数字会存在两个中位数候选）
+          // 这个和上面的第k大讲解有稍许出入，但如果理解了上面的，这个稍微变通下便可理清
+          if (x == -1) {
+            printf("%d\n", a.top());
+            a.pop();
+          }
+          // 若为插入操作，根据大根堆堆顶的元素值，选择合适的堆进行插入
+          else {
+            if (a.empty() || x <= a.top())
+              a.push(x);
+            else
+              b.push(x);
+          }
+          // 对堆顶堆进行调整
+          if (a.size() > (a.size() + b.size() + 1) / 2) {
+            b.push(a.top());
+            a.pop();
+          } else if (a.size() < (a.size() + b.size() + 1) / 2) {
+            a.push(b.top());
+            b.pop();
+          }
         }
-        return 0;
+      }
+      return 0;
     }
     ```
 

@@ -243,10 +243,11 @@ $$
       return 0;
     }
     ```
+
 ## 习题
 
-[SPOJ GSS3 - Can you answer these queries III](https://www.spoj.com/problems/GSS3/)
+ [SPOJ GSS3 - Can you answer these queries III](https://www.spoj.com/problems/GSS3/) 
 
-[「NOIP2018」保卫王国](https://loj.ac/p/2955)
+ [「NOIP2018」保卫王国](https://loj.ac/p/2955) 
 
-[「SDOI2017」切树游戏](https://loj.ac/p/2269)
+ [「SDOI2017」切树游戏](https://loj.ac/p/2269) 

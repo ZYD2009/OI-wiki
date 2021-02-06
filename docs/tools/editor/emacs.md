@@ -60,11 +60,11 @@ Emacs 拥有极为丰富的快捷键，可以大幅提高工作的效率。使�
 
 为了方便描述，做如下约定：
 
-| 字符  | 键位              |
-| --- | --------------- |
-| C   | <kbd>Ctrl</kbd> |
-| M   | <kbd>Alt</kbd>  |
-| ？   | 任意键位            |
+| 字符 | 键位              |
+| -- | --------------- |
+| C  | <kbd>Ctrl</kbd> |
+| M  | <kbd>Alt</kbd>  |
+| ？  | 任意键位            |
 
 一般有以下三种：
 
@@ -232,11 +232,11 @@ Emacs 拥有极为丰富的快捷键，可以大幅提高工作的效率。使�
 
 ### 拓展阅读
 
-要以终端模式启动 Emacs，在启动时添加参数 `-nw`。Emacs 有多种变体，如采用 native-comp 来减少延迟的 [GCC Emacs](http://akrl.sdf.org/gccemacs.html) 及其纯 GTK 版本变体、针对 macOS 优化的 Emacs Macport。
+要以终端模式启动 Emacs，在启动时添加参数 `-nw` 。Emacs 有多种变体，如采用 native-comp 来减少延迟的 [GCC Emacs](http://akrl.sdf.org/gccemacs.html) 及其纯 GTK 版本变体、针对 macOS 优化的 Emacs Macport。
 
-Emacs 有中心化的软件仓库，配置后可通过 `M-x package-install` 来安装插件。使用[镜像站](https://mirrors.bfsu.edu.cn/help/elpa/)可以加快下载速度。
+Emacs 有中心化的软件仓库，配置后可通过 `M-x package-install` 来安装插件。使用 [镜像站](https://mirrors.bfsu.edu.cn/help/elpa/) 可以加快下载速度。
 
-Emacs 可以使用语言服务器（Language Server Protocol）来提高编辑体验，目前推荐的 C++ 后端是 [Clangd](https://clangd.llvm.org/)。前端可以采用 [Eglot](https://github.com/joaotavora/eglot) 或 [Emacs LSP](https://emacs-lsp.github.io/lsp-mode/)，参阅[此条目](https://github.com/joaotavora/eglot#historical-differences-to-lsp-modeel)可能对选择前端有所帮助。
+Emacs 可以使用语言服务器（Language Server Protocol）来提高编辑体验，目前推荐的 C++ 后端是 [Clangd](https://clangd.llvm.org/) 。前端可以采用 [Eglot](https://github.com/joaotavora/eglot) 或 [Emacs LSP](https://emacs-lsp.github.io/lsp-mode/) ，参阅 [此条目](https://github.com/joaotavora/eglot#historical-differences-to-lsp-modeel) 可能对选择前端有所帮助。
 
 拓展名为 `.org` 的 Org Mode 文档可以通过 [Pandoc](https://pandoc.org/) 转换为 Markdown 文档。
 

@@ -15,7 +15,7 @@ STL 栈 ( `std::stack` ) 是一种后进先出 (Last In, First Out) 的容器适
 ```cpp
 std::stack<TypeName> s;  // 使用默认底层容器 deque，数据类型为 TypeName
 std::stack<TypeName, Container> s;  // 使用 Container 作为底层容器
-std::stack<TypeName> s2(s1);  // 将 s1 复制一份用于构造 s2
+std::stack<TypeName> s2(s1);        // 将 s1 复制一份用于构造 s2
 ```
 
 ### 成员函数

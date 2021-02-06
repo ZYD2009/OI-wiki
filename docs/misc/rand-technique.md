@@ -297,7 +297,7 @@ $$
     
     ??? mdui-shadow-6 "如果你不知道域是什么"
         你只需记得这两样东西都是域：
-    
+        
         1. 模质数的剩余系，以及其上的各种运算。
         2. 实数集，以及其上的各种运算。
     
@@ -572,15 +572,15 @@ $$
     
     ??? mdui-shadow-6 "计算期望复杂度"
         我们再从另一个角度分析，尝试计算该算法的期望抛硬币次数。
-    
+        
         用 Hoeffding 不等式求第二、第三步中操作次数期望值的上界：
-    
+        
         $$
         \mathrm{E}\Big[\big|X-\mathrm{E}[X]\big|\Big]=\int\limits_0^\infty \mathrm{Pr}\Big[\big|X-\mathrm{E}[X]\big|\geq t\Big]\mathrm{d}t\leq2\int\limits_0^\infty \exp {-\dfrac {t^2}n}\mathrm{d}t=\sqrt{\pi n}
         $$
-    
+        
         从而第二、第三步所需抛硬币次数的期望值是 $\sqrt{\pi n}\cdot2\lceil\log_2 n\rceil$ 。
-    
+        
         综上，该算法期望需要抛 $n+2\sqrt{\pi n}\lceil\log_2 n\rceil$ 次硬币。
 
 ### 「耦合」思想

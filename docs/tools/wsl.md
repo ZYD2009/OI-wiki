@@ -186,7 +186,7 @@ sudo sed -i 's|/usr/share/man|/usr/share/man/zh_CN|g' /etc/manpath.config
 sudo apt install -y build-essential vim ddd gdb fpc emacs gedit anjuta lazarus
 ```
 
-GUIDE 的安装请参考 [Debian 或 Ubuntu 下 GUIDE 的安装](./editor/guide.md#debian-ubuntu)
+GUIDE 的安装请参考 [Debian 或 Ubuntu 下 GUIDE 的安装](./editor/guide.md#debian-ubuntu) 
 
 这是基础的 + NOI 官方要求环境，如有需要可以用 `apt install 程序名` 来安装别的。
 若想安装其他版本可以参考 Debian 官方的 [包管理手册](https://www.debian.org/doc/manuals/debian-reference/ch02.zh-cn.html) 。
@@ -297,8 +297,8 @@ xfce4-session
     可以用自带命令行，或者使用图形界面。
     比如说 vim，在命令行中键入 `man vim` ，会给出一份详尽的使用方法。
     亦可使用 `vim --help` 。
-    
-    关于命令行，可阅读[命令行](./cmd.md)
+
+    关于命令行，可阅读 [命令行](./cmd.md) 
 
 -   占用量大？
 

@@ -352,7 +352,7 @@ LaTeX 作为公式排版的首选，我们应当正确地使用它。因此对�
 
 - 不要使用 `split` 、 `eqnarray` 环境；
 
-- 不要使用 `\lt`, `\gt` 来表示大于号和小于号，请直接使用 `<`，`>`；
+- 不要使用 `\lt` , `\gt` 来表示大于号和小于号，请直接使用 `<` ， `>` ；
 
 - 不要直接用 `\\` 换行（需要换行的公式，请套在 `aligned` 或其他多行环境下）；
 
@@ -485,4 +485,4 @@ $$
 
 [^ref4]:  [SVG|MDN](https://developer.mozilla.org/zh-CN/docs/Web/SVG) 
 
-[^webarchive]: [Save Page in Internet Archive](https://web.archive.org/save/)
+[^webarchive]:  [Save Page in Internet Archive](https://web.archive.org/save/) 
